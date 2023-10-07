@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap');
+
+:root {
+    --dark-cyan: hsl(158, 36%, 37%);
+    --cream: hsl(30, 38%, 92%);
+
+    --very-dark-blue: hsl(212, 21%, 14%);
+    --dark-grayish-blue: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 14px;
+}
+
+main {
+    display: grid;
+    place-items: center;
+    background-color: var(--cream);
+}
+
+.product {
+    font-family: 'Montserrat', sans-serif;
+    width: 90%;
+    max-width: 600px;
+    margin: 2rem 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.product__img picture img {
+    width: 100%;
+    display: block;
+}
+
+.product__content {
+    padding: 2em;
+    background-color: var(--white);
+}
+
+.label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--dark-grayish-blue);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.title {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: var(--very-dark-blue);
+    line-height: 1;
+    margin: 0.5em 0;
+}
+
+.description {
+    font-weight: 500;
+    color: var(--dark-grayish-blue);
+    line-height: 1.6;
+    margin-bottom: 1.8rem;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.flex .price {
+    font-family: 'Fraunces', serif;
+    font-weight:700;
+    font-size: 2rem;
+    color: var(--dark-cyan);
+    margin-right: 0.8em;
+}
+
+.flex .ex-price {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--dark-grayish-blue);
+}
+
+.add-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-family: inherit;
+    font-size: 0.925rem;
+    font-weight: 700;
+    color: var(--white);
+    background-color: var(--dark-cyan);
+    border: none;
+    border-radius: 8px; 
+    gap: 1rem;
+    margin-top: 1.5em;
+    padding: 1em; 
+    cursor: pointer;  
+}
+
+.add-btn::before {
+    content: "";
+    width: 15px;
+    height: 16px;
+    background-image: url(images/icon-cart.svg);
+}
+
+.add-btn:hover {
+    background-color: hsl(158, 36%, 20%);
+}
+
+@media (min-width: 600px) {
+    .product {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .product__content {
+        padding: 3em;
+    }
+}
